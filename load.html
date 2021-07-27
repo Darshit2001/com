@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css?v=19998">
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" type="text/javascript" src="https://kit.fontawesome.com/b4afe454ee.js" crossorigin="anonymous"></script>
+    <title>Event Website</title>
+</head>
+
+<body>
+    <div class="supportHeader">
+        <div class="supportHeader--content">
+            <span>Need any Technical Assistance? <a class="mailtoLink" href="mailto:support@webmobi.com">support@webmobi.com</a></span>
+        </div>
+    </div>
+    <div id="loader-page" style="position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 1;background: url(https://webmobi.s3.amazonaws.com/nativeapps/eventdemofirst/1619161186938_loader.gif) 50% 50% no-repeat rgb(245, 239, 254);"></div>
+    <nav class="navbar--header">
+    </nav>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label> 
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list" style="display: none;">
+                <li class="navigation__item navBarResponsiveClick" data-link="abouUs"><a class="navigation__link">About Us</a></li>
+                <li class="navigation__item navBarResponsiveClick hideAfterLogin" data-link="registerNow"><a class="navigation__link">Register Now</a></li>
+                <li class="navigation__item navBarResponsiveClick hideAfterLogin" data-link="alreadyRegistered"><a class="navigation__link">Already Registered?</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="header">
+        <div class="header-image">
+        </div>
+        <div class="header--left--opacity">
+         
+            <button class="btn--el" onclick="register_content();">Register Now</button>
+            <a class="register-now" data-toggle="modal" data-target="#login-modal">Already Registered?</a>
+        </div>
+    </section>
+    <section class="eventDetails">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div>
+                        <span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+                        <span class="eventDetails--details eventDetails--date">10 JUN 2020</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="eventDetails--details eventDetails--place">Mumbai</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <span><i class="fas fa-users" aria-hidden="true"></i></span>
+                        <span class="eventDetails--details eventDetails--sessions">25 SESSIONS</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <span><i class="fas fa-network-wired" aria-hidden="true"></i></span>
+                        <span class="eventDetails--details eventDetails--network">LEARN & NETWORK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="aboutUs tabEls container">
+    </section>
+ 
+    <section class="speakers tabEls container">
+    </section>    
+   
+    <section class="agendaDetails tabEls container">
+    </section>
+    <section class="aboutUsContent2 tabEls">
+    <hr class="aboutusLineBreaker">
+        <div class="aboutUsContent2--content container">
+        </div>
+    </section>
+    <section class="sposorsDetails tabEls">
+	<hr>
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>      
+    <section class="ticketsDisplay tabEls">
+        <div class="registration-header">
+            <h1>Tickets</h1>
+            <div class="container">
+                <p>Tickets Count: <span id="ticketsCount"></span></p>            
+                <div id="ticketsContainer">
+                    
+                </div>
+              </div>
+        </div>
+    </section>
+    <footer class="footer-element">
+        <div class="applogo">
+            
+        </div>
+    </footer>
+    <button type="button" id="modalButton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+                  <nav class="navbar--header-2">
+                      </nav>
+                      <div class="banner-image">
+                          <img src="https://webmobi.s3.amazonaws.com/nativeapps/1stbirthday/1573133159611_VonageLogo_Symbol_Black.png" style="width: 18%;" alt="banner-image">
+                      </div>
+                      <span style="display: none;" id="reg_Content" class="textcenter">Your registration has been successfully cancelled</span>
+                      <div id="thankyou_content">
+                        <span class="textcenter" style="margin-top: 28px">Thank you for registering for the 2020 Vonage Sales Kickoff.</span>
+                        <span class="textcenter">We look forward to seeing you there.</span>  
+                      </div>
+                      <div class="redirect_button">
+                          <div class="mosaic">
+                              <a id="home_redirect">HOME</a>
+                          </div>
+                      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+                    <div class="modal-content login-modal">
+                        <div class="modal-header modal-content--header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Already Registered?</h4>
+                        </div>
+                        <div class="modal-body modal-content--body">
+                                <p>Enter the email address you used to register for the event, along with the confirmation number you received.</p>
+                                <div class="modal-input--container">
+                                    <div class="modal-input--container-username">
+                                            <p><label for="username">Email</label></p>
+                                            <p><input type="text" id="username"></p> 
+                                    </div>
+                                    <div class="modal-input--container-password">
+                                            <p><label for="password">Confirmation Number/Password</label></p> 
+                                            <p><input type="password" id="password"></p>
+                                    </div>
+                                        <a class="btn-backLogin email"><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp; Back</a>
+                                    <div class="modal-button--container">
+                                            <button class="btn btn-nextLogin">Next</button>
+                                        <button class="btn btn-login">Log In</button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-body modal-content--email">
+                                <div class="modal-input--container">
+                                    <div class="modal-input--container-password">
+                                            <p><label for="confirmPassword-1">Email</label></p>
+                                            <p><input type="email" id="email-send"></p> 
+                                    </div>
+                                    <a class="btn-send password">Back to Login</a>
+                                    <div class="modal-button--container">
+                                        <button class="btn btn-sendPassword">Send</button>
+                                    </div>
+                                </div>
+                        </div>
+                      </div>
+        </div>
+      </div>
+    <div class="modal fade" id="speakerModal" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title speakerModalTitle" id="speakerModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="speakerContainer">
+                <div class="speakerContainer--image">
+                    <img src="hello" alt="Profile Image">
+                </div>
+                <div class="speakerContainer--content">
+                    <h3 class="speakerContainer--content--position">
+
+                    </h3>
+                    <p class="speakerContainer--content--content">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript" src="/assets/js/config.js?v=95"></script>
+    <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/assets/js/tickets.js?v=999915"></script>
+</body>
+
+</html>
